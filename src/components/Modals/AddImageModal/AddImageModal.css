@@ -1,0 +1,41 @@
+.AddImageModal {
+    background: #FFF;
+    width: 430px;
+    height: 410px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.AddImageModalHeader {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 48px;
+    margin-bottom: 39px;
+}
+
+.AddImageModalInput {
+    border: 1px solid #000;
+    height: 60px;
+    font-size: 20px;
+    margin-bottom: 40px;
+    padding: 0 21px;
+    box-sizing: border-box;
+}
+
+.AddImageModalInputContainer {
+    display: flex;
+    flex-direction: column;
+    width: 290px;
+}
+
+.AddImageModalFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 290px;
+    padding-left: 6px;
+    padding-right: 2px;
+    box-sizing: border-box;
+}

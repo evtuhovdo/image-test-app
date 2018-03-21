@@ -1,0 +1,55 @@
+.BorderedButton {
+    box-sizing: border-box;
+    width: 120px;
+    height: 50px;
+    border-radius: 7px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: box-shadow 0.1s ease-in-out, color 0.1s ease-in-out, border 0.1s ease-in-out;
+}
+
+.BorderedButton:focus {
+    outline: none;
+}
+
+.BorderedButton-green {
+    color: #81D135;
+    border: 1px solid #81D135;
+}
+
+.BorderedButton-green:hover {
+    color: #99da5d;
+    border: 1px solid #99da5d;
+    box-shadow: 0 0 4px rgba(127, 209, 51, 0.78);
+}
+
+.BorderedButton-green:focus {
+    box-shadow: 0 0 4px rgba(127, 209, 51, 0.78);
+}
+
+.BorderedButton-green:active {
+    color: #66aa27;
+    border: 1px solid #66aa27;
+    box-shadow: 0 0 4px rgba(102, 170, 39, 0.78);
+}
+
+.BorderedButton-black {
+    color: #000;
+    border: 1px solid #000;
+}
+
+.BorderedButton-black:hover {
+    color: #5c5c5c;
+    border: 1px solid #5c5c5c;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.BorderedButton-black:focus {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.BorderedButton-black:active {
+    color: #434343;
+    border: 1px solid #434343;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}

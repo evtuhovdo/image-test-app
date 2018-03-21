@@ -22,7 +22,10 @@
     "react-router-redux": "^4.0.8",
     "react-validator-prop-types": "^1.1.0",
     "redux": "~3.7.2",
-    "redux-thunk": "~2.2.0"
+    "redux-form": "^7.3.0",
+    "redux-thunk": "~2.2.0",
+    "uuid": "^3.2.1",
+    "validator": "^9.4.1"
   },
   "devDependencies": {
     "eslint": "~4.18.2",

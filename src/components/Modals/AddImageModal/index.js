@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import AriaModal from 'react-aria-modal';
 
 import BorderedButton from '../../../components/BorderedButton';
+import AddImageForm from './includes/AddImageForm';
 
 import './AddImageModal.css';
+import submit from './includes/AddImageForm/submit';
 
 const style = {
   underlayStyle: {
@@ -15,34 +17,33 @@ const style = {
   },
 };
 
-const AddImageModal = ({ onExit, getApplicationNode, mounted }) => (
-  <AriaModal
-    focusTrapPaused
-    mounted={mounted}
-    titleText="Add new image"
-    onExit={onExit}
-    initialFocus="#newImageTitleInput"
-    getApplicationNode={getApplicationNode}
-    underlayStyle={style.underlayStyle}
-  >
-    <div className="AddImageModal">
-      <header className="AddImageModalHeader">New image</header>
-      <div className="AddImageModalInputContainer">
-        <input className="AddImageModalInput" id="newImageTitleInput" type="text" placeholder="Title" />
-        <input className="AddImageModalInput" type="text" placeholder="URL" />
+const AddImageModal = ({ onExit, getApplicationNode, mounted }) => {
+  const onSubmit = (values) => {
+    onExit();
+    return submit(values);
+  };
+
+  return (
+    <AriaModal
+      mounted={mounted}
+      titleText="Add new image"
+      onExit={onExit}
+      initialFocus="#newImageTitleInput"
+      getApplicationNode={getApplicationNode}
+      underlayStyle={style.underlayStyle}
+    >
+      <div className="AddImageModal">
+        <header className="AddImageModalHeader">New image</header>
+        <AddImageForm onSubmit={onSubmit}>
+          <footer className="AddImageModalFooter">
+            <BorderedButton text="CLOSE" color="black" onClick={onExit} />
+            <BorderedButton text="ADD" type="submit" />
+          </footer>
+        </AddImageForm>
       </div>
-      <footer className="AddImageModalFooter">
-        <BorderedButton text="CLOSE" color="black" onClick={onExit} />
-        <BorderedButton
-          text="ADD"
-          onClick={() => {
-            console.log('add new Image');
-          }}
-        />
-      </footer>
-    </div>
-  </AriaModal>
-);
+    </AriaModal>
+  );
+};
 
 AddImageModal.propTypes = {
   mounted: PropTypes.bool,

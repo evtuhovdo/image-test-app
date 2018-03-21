@@ -1,0 +1,27 @@
+.AddImageModalInput {
+    border: 1px solid #000;
+    height: 60px;
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 40px;
+    padding: 0 21px;
+    box-sizing: border-box;
+}
+
+.AddImageModalInputContainer {
+    display: flex;
+    flex-direction: column;
+    width: 290px;
+}
+
+.AddImageModalInputContainer .input-row {
+    position: relative;
+}
+
+.AddImageModalInputContainer .input-row .error{
+    position: absolute;
+    top: 62px;
+    right: 0;
+    color: tomato;
+    text-align: right;
+}

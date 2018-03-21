@@ -15,21 +15,6 @@
     margin-bottom: 39px;
 }
 
-.AddImageModalInput {
-    border: 1px solid #000;
-    height: 60px;
-    font-size: 20px;
-    margin-bottom: 40px;
-    padding: 0 21px;
-    box-sizing: border-box;
-}
-
-.AddImageModalInputContainer {
-    display: flex;
-    flex-direction: column;
-    width: 290px;
-}
-
 .AddImageModalFooter {
     display: flex;
     flex-direction: row;

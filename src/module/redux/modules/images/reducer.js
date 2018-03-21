@@ -32,7 +32,7 @@ const imagesReducer = (
     case types.REMOVE_IMAGE:
       return {
         ...state,
-        images: state.images,
+        images: state.images.filter(image => image.id !== action.payload.imageId),
       };
     default:
       return state;

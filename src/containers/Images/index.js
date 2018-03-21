@@ -9,7 +9,7 @@ import ImageBlock from '../../components/ImageBlock';
 const Images = ({ images, removeImage }) => (
   <section>
     {images.length === 0 && <div>Нет изображений</div>}
-    {images.length && (
+    {images.length > 0 && (
         images.map(image => (
           <ImageBlock
             onRemoveImage={removeImage}

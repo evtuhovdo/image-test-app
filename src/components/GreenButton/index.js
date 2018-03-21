@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './Button.css';
+import './GreenButton.css';
 
-const Button = ({ text }) => (
+const GreenButton = ({ text }) => (
   <button className="button">
     {text}
   </button>
 );
 
-Button.propTypes = {
+GreenButton.propTypes = {
   text: PropTypes.string.isRequired,
 };
 
-export default Button;
+export default GreenButton;

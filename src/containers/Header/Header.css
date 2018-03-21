@@ -1,5 +1,11 @@
 .header {
     border-bottom: 1px solid #979797;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.95);
+    width: 100%;
 }
 
 .headerContent {

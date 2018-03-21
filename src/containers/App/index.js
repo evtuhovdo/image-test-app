@@ -7,6 +7,7 @@ import MainContent from '../MainContent';
 import BorderedButton from '../../components/BorderedButton';
 import Images from '../Images';
 import AddImageModal from '../../components/Modals/AddImageModal';
+import AppMainActions from '../AppMainActions';
 
 class App extends Component {
   state = {
@@ -30,9 +31,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <MainContent>
-          <section className="AppMainActions">
-            <BorderedButton text="NEW" onClick={this.showAddImageModal} />
-          </section>
+          <AppMainActions onAddClick={this.showAddImageModal} />
           <Images />
         </MainContent>
         <AddImageModal

@@ -9,6 +9,14 @@
     transition: background 0.1s ease-in-out, color 0.1s ease-in-out;
 }
 
+.FlatButton-fullWidth {
+    width: 100%;
+}
+
+.FlatButton-fullHeight {
+    height: 100%;
+}
+
 .FlatButton:hover {
     background: rgba(188, 76, 78, 0.1);
 }

@@ -7,3 +7,10 @@
     justify-content: center;
     align-items: center;
 }
+
+@media only screen and (max-width : 1023px) {
+    .MainContent {
+        max-width: 100%;
+        width: calc(100% - 40px);
+    }
+}

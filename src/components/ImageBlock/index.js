@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import ValidatorPropTypes from 'react-validator-prop-types';
 
 import FlatButton from '../../components/FlatButton';
+import TapAction from './includes/TapAction';
 
 import './ImageBlock.css';
 
@@ -17,9 +18,14 @@ const ImageBlock = ({ id, title, imageUrl, onRemoveImage }) => {
         <div title={title} className="ImageBlockHeader-Title">
           {title}
         </div>
-        <FlatButton text="Delete" color="red" onClick={removeImage} />
+        <div className="ImageBlockFlatButton">
+          <FlatButton text="Delete" color="red" onClick={removeImage} />
+        </div>
       </header>
-      <img src={imageUrl} alt={title} className="ImageBlockImage" />
+      <div className="ImageBlockTapAction">
+        <img src={imageUrl} alt={title} className="ImageBlockImage" />
+        <TapAction onRemoveImage={removeImage} />
+      </div>
     </div>
   );
 };

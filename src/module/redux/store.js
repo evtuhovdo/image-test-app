@@ -2,13 +2,14 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
 import thunk from 'redux-thunk';
 import createHistory from 'history/createBrowserHistory';
+import { responsiveStoreEnhancer } from 'redux-responsive';
 
 import reducers from './reducers';
 
 export const history = createHistory();
 
 const initialState = {};
-const enhancers = [];
+const enhancers = [responsiveStoreEnhancer];
 
 if (process.env.NODE_ENV === 'development') {
   const { devToolsExtension } = window;

@@ -7,8 +7,8 @@ import ImageBlock from '../../components/ImageBlock';
 
 // TODO: PropTypes
 const Images = ({ images, removeImage }) => (
-  <section>
-    {images.length === 0 && <div>Нет изображений</div>}
+  <section className="Images">
+    {images.length === 0 && <div className="ImagesNoImages">Нет изображений</div>}
     {images.length > 0 && (
         images.map(image => (
           <ImageBlock

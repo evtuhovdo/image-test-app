@@ -1,7 +1,9 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
-.App-intro {
-  font-size: large;
+.AppMainActions {
+  margin-bottom: 20px;
 }

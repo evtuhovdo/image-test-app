@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+
 import './App.css';
 
 import Header from './../Header';
 import MainContent from '../MainContent';
 import GreenButton from '../../components/GreenButton';
+import Images from '../Images';
 
 class App extends Component {
   render() {
@@ -11,10 +13,10 @@ class App extends Component {
       <div className="App">
         <Header />
         <MainContent>
-          <GreenButton text="NEW" />
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
+          <section className="AppMainActions">
+            <GreenButton text="NEW" />
+          </section>
+          <Images />
         </MainContent>
       </div>
     );

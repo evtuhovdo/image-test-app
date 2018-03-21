@@ -2,13 +2,21 @@
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
+    height: 40px;
 }
 
 .logo-image {
     background: #000;
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
     display: inline-block;
-    margin-right: 5px;
+    margin-right: 13px;
+}
+
+.app-title {
+    font-size: 22px;
+    height: 100%;
+    padding-top: 9px;
+    letter-spacing: 0.02em;
 }

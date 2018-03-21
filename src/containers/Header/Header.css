@@ -6,6 +6,7 @@
     left: 0;
     background: rgba(255, 255, 255, 0.95);
     width: 100%;
+    height: 62px;
 }
 
 .headerContent {
@@ -14,5 +15,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 10px;
+    padding: 10px 13px;
+    box-sizing: border-box;
+    height: 100%;
 }

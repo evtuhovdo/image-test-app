@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './GreenButton.css';
 
 const GreenButton = ({ text }) => (
-  <button className="button">
+  <button className="GreenButton">
     {text}
   </button>
 );

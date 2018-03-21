@@ -1,0 +1,27 @@
+.button {
+    color: #81D135;
+    box-sizing: border-box;
+    border: 1px solid #81D135;
+    padding: 13px 40px;
+    border-radius: 7px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: box-shadow 0.1s ease-in-out, color 0.1s ease-in-out, border  0.1s ease-in-out;
+}
+
+.button:hover {
+    color: #99da5d;
+    border: 1px solid #99da5d;
+    box-shadow: 0 0 4px rgba(127, 209, 51, 0.78);
+}
+
+.button:active {
+    color: #66aa27;
+    border: 1px solid #66aa27;
+    box-shadow: 0 0 4px rgba(102, 170, 39, 0.78);
+}
+
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 4px rgba(127, 209, 51, 0.78);
+}

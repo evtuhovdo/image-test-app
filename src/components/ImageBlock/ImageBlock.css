@@ -49,3 +49,10 @@
         display: none;
     }
 }
+
+
+@media only screen and (max-width : 808px) {
+    .ImageBlock {
+        width: 100%;
+    }
+}

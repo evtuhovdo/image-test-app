@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import './AppLogo.css';
 
 const AppLogo = ({ title }) => (
-  <div className="logo">
-    <div className="logo-image" />
-    <div className="app-title">{title}</div>
+  <div className="AppLogo">
+    <div className="AppLogoImage" />
+    <div className="AppLogoTitle">{title}</div>
   </div>
 );
 

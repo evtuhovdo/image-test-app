@@ -6,18 +6,28 @@ import FlatButton from '../../components/FlatButton';
 
 import './ImageBlock.css';
 
-const ImageBlock = ({ title, imageUrl }) => (
-  <div className="ImageBlock">
-    <header className="ImageBlockHeader">
-      <div title={title} className="ImageBlockHeader-Title">{title}</div>
-      <FlatButton text="Delete" color="red" onClick={() => { console.log('puff and Delete image')}} />
-    </header>
-    <img src={imageUrl} alt={title} className="ImageBlockImage" />
-  </div>
-);
+const ImageBlock = ({ id, title, imageUrl, onRemoveImage }) => {
+  const removeImage = () => {
+    onRemoveImage(id);
+  };
+
+  return (
+    <div className="ImageBlock">
+      <header className="ImageBlockHeader">
+        <div title={title} className="ImageBlockHeader-Title">
+          {title}
+        </div>
+        <FlatButton text="Delete" color="red" onClick={removeImage} />
+      </header>
+      <img src={imageUrl} alt={title} className="ImageBlockImage" />
+    </div>
+  );
+};
 
 ImageBlock.propTypes = {
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  onRemoveImage: PropTypes.func.isRequired,
   imageUrl: ValidatorPropTypes.url.isRequired,
 };
 

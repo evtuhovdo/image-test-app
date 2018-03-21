@@ -1,16 +1,40 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { imagesActions } from '../../module/redux/modules/images';
 
 import './Images.css';
 import ImageBlock from '../../components/ImageBlock';
 
-const Images = () => (
+// TODO: PropTypes
+const Images = ({ images, removeImage }) => (
   <section>
-    <ImageBlock title="Sport 1" imageUrl="https://placeholdit.co/i/800x450" />
-    <ImageBlock title="Sport 2" imageUrl="https://placeholdit.co/i/800x450" />
-    <ImageBlock title="Sport 3" imageUrl="https://placeholdit.co/i/800x450" />
-    <ImageBlock title="Sport 5" imageUrl="https://placeholdit.co/i/800x450" />
-    <ImageBlock title="Sport 6" imageUrl="https://placeholdit.co/i/800x450" />
+    {images.length === 0 && <div>Нет изображений</div>}
+    {images.length && (
+        images.map(image => (
+          <ImageBlock
+            onRemoveImage={removeImage}
+            key={image.id}
+            id={image.id}
+            title={image.title}
+            imageUrl={image.url}
+          />
+        ))
+      )}
   </section>
 );
 
-export default Images;
+const mapStoreToProps = state => ({
+  images: state.imagesStore.images,
+});
+
+const mapDispatchToProps = dispatch => ({
+  addImage: ({ id, title, url }) =>
+    dispatch(imagesActions.addImage({
+      id,
+      title,
+      url,
+    })),
+  removeImage: imageId => dispatch(imagesActions.removeImage(imageId)),
+});
+
+export default connect(mapStoreToProps, mapDispatchToProps)(Images);

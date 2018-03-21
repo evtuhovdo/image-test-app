@@ -37,4 +37,10 @@
     .AddImageModalHeader {
         margin-top: 0;
     }
+
+    .AddImageModalFooter {
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        height: 120px;
+    }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AriaModal from 'react-aria-modal';
+import { connect } from 'react-redux';
 
 import BorderedButton from '../../../components/BorderedButton';
 import AddImageForm from './includes/AddImageForm';
@@ -17,7 +18,7 @@ const style = {
   },
 };
 
-const AddImageModal = ({ onExit, getApplicationNode, mounted }) => {
+const AddImageModal = ({ onExit, getApplicationNode, mounted, smallView }) => {
   const onSubmit = (values) => {
     onExit();
     return submit(values);
@@ -36,8 +37,8 @@ const AddImageModal = ({ onExit, getApplicationNode, mounted }) => {
         <header className="AddImageModalHeader">New image</header>
         <AddImageForm onSubmit={onSubmit}>
           <footer className="AddImageModalFooter">
-            <BorderedButton text="CLOSE" color="black" onClick={onExit} />
-            <BorderedButton text="ADD" type="submit" />
+            <BorderedButton text="CLOSE" fullWidth={smallView} color="black" onClick={onExit} />
+            <BorderedButton text="ADD" fullWidth={smallView} type="submit" />
           </footer>
         </AddImageForm>
       </div>
@@ -49,10 +50,13 @@ AddImageModal.propTypes = {
   mounted: PropTypes.bool,
   getApplicationNode: PropTypes.func.isRequired,
   onExit: PropTypes.func.isRequired,
+  smallView: PropTypes.bool.isRequired,
 };
 
 AddImageModal.defaultProps = {
   mounted: false,
 };
 
-export default AddImageModal;
+const mapStoreToProps = ({ browser }) => ({ smallView: browser.lessThan.big });
+
+export default connect(mapStoreToProps)(AddImageModal);

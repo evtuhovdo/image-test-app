@@ -1,0 +1,28 @@
+.ImageBlock {
+    box-sizing: border-box;
+    width: 746px;
+    margin-bottom: 48px;
+}
+
+.ImageBlockHeader {
+    border: 1px solid #979797;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px 0 22px;
+    height: 66px;
+}
+
+.ImageBlockHeader-Title {
+    font-size: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.ImageBlockImage {
+    width: 100%;
+}

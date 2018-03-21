@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "gulp": "^3.9.1",
+    "gulp-real-favicon": "^0.2.2",
     "history": "^4.7.2",
     "lodash": "^4.17.5",
     "normalize.css": "^8.0.0",
@@ -37,6 +39,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "eslint": "eslint ./src"
+    "eslint": "eslint ./src",
+    "inject-favicon-markups": "gulp inject-favicon-markups"
   }
 }

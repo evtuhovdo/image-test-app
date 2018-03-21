@@ -12,16 +12,10 @@ class TapAction extends Component {
     showAction: false,
   };
 
-  handleTap = event => {
-    if (!this.state.showAction) {
-      this.setState({
-        showAction: true,
-      });
-
-      event.stopPropagation();
-
-      return false;
-    }
+  showAction = () => {
+    this.setState({
+      showAction: true,
+    });
   };
 
   render() {
@@ -33,9 +27,11 @@ class TapAction extends Component {
     }
 
     return (
+      // eslint-disable-next-line jsx-a11y/click-events-have-key-events
       <div
+        role="button"
         className={classNames(['TapAction', smallView && showAction && 'TapAction-ActionVisible'])}
-        onClick={this.handleTap}
+        onClick={this.showAction}
       >
         {smallView &&
           showAction && (

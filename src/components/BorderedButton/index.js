@@ -4,7 +4,9 @@ import classNames from 'classnames';
 
 import './BorderedButton.css';
 
-const BorderedButton = ({ text, color, fullWidth, ...rest }) => (
+const BorderedButton = ({
+  text, color, fullWidth, ...rest
+}) => (
   <button
     className={classNames([
       `BorderedButton BorderedButton-${color}`,

@@ -1,12 +1,8 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
-import { routerMiddleware } from 'react-router-redux';
 import thunk from 'redux-thunk';
-import createHistory from 'history/createBrowserHistory';
 import { responsiveStoreEnhancer } from 'redux-responsive';
 
 import reducers from './reducers';
-
-export const history = createHistory();
 
 const initialState = {};
 const enhancers = [responsiveStoreEnhancer];
@@ -22,10 +18,10 @@ const rootReducer = combineReducers({
   ...reducers,
 });
 
-const middleware = [thunk, routerMiddleware(history)];
+const middlewares = [thunk];
 
-const composedEnhancers = compose(applyMiddleware(...middleware), ...enhancers);
+const composedEnhancers = compose(applyMiddleware(...middlewares), ...enhancers);
 
-let store = createStore(rootReducer, initialState, composedEnhancers);
+const store = createStore(rootReducer, initialState, composedEnhancers);
 
 export default store;

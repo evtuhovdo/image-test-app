@@ -2,8 +2,8 @@ const loadImage = ({ url, resolve, reject }) => {
   const image = new Image();
   image.src = url;
 
-  image.onload = function () {
-    if (this.width === 0 || this.height === 0) {
+  image.onload = (event) => {
+    if (event.currentTarget.width === 0 || event.currentTarget.height === 0) {
       reject();
 
       return;

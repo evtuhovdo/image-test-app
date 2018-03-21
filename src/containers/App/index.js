@@ -4,7 +4,6 @@ import './App.css';
 
 import Header from './../Header';
 import MainContent from '../MainContent';
-import BorderedButton from '../../components/BorderedButton';
 import Images from '../Images';
 import AddImageModal from '../../components/Modals/AddImageModal';
 import AppMainActions from '../AppMainActions';

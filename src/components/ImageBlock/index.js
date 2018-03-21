@@ -7,7 +7,9 @@ import TapAction from './includes/TapAction';
 
 import './ImageBlock.css';
 
-const ImageBlock = ({ id, title, imageUrl, onRemoveImage }) => {
+const ImageBlock = ({
+  id, title, imageUrl, onRemoveImage,
+}) => {
   const removeImage = () => {
     onRemoveImage(id);
   };
@@ -34,6 +36,7 @@ ImageBlock.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   onRemoveImage: PropTypes.func.isRequired,
+  // eslint-disable-next-line react/no-typos
   imageUrl: ValidatorPropTypes.url.isRequired,
 };
 

@@ -1,11 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { imagesActions } from '../../module/redux/modules/images';
 
 import './Images.css';
 import ImageBlock from '../../components/ImageBlock';
 
-// TODO: PropTypes
 const Images = ({ images, removeImage }) => (
   <section className="Images">
     {images.length === 0 && <div className="ImagesNoImages">Нет изображений</div>}
@@ -22,6 +22,15 @@ const Images = ({ images, removeImage }) => (
       )}
   </section>
 );
+
+Images.propTypes = {
+  removeImage: PropTypes.func.isRequired,
+  images: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+  }).isRequired).isRequired,
+};
 
 const mapStoreToProps = state => ({
   images: state.imagesStore.images,

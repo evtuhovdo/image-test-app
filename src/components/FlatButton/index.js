@@ -4,7 +4,9 @@ import classNames from 'classnames';
 
 import './FlatButton.css';
 
-const FlatButton = ({ text, fullWidth, fullHeight, ...rest }) => (
+const FlatButton = ({
+  text, fullWidth, fullHeight, ...rest
+}) => (
   <button
     className={classNames([
       'FlatButton',

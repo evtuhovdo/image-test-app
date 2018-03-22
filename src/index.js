@@ -13,6 +13,12 @@ import store from './module/redux/store';
 
 const target = document.getElementById('root');
 
+if (process.env.NODE_ENV !== 'production') {
+  // eslint-disable-next-line global-require,import/no-extraneous-dependencies
+  const { whyDidYouUpdate } = require('why-did-you-update');
+  whyDidYouUpdate(React);
+}
+
 ReactDOM.render(
   (
     <Provider store={store}>

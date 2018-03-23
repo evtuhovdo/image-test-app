@@ -18,7 +18,9 @@ const style = {
   },
 };
 
-const AddImageModal = ({ onExit, getApplicationNode, mounted, smallView }) => {
+const AddImageModal = ({
+  onExit, getApplicationNode, mounted, smallView,
+}) => {
   const onSubmit = (values) => {
     onExit();
     return submit(values);

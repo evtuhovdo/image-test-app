@@ -30,6 +30,7 @@
     "validator": "^9.4.1"
   },
   "devDependencies": {
+    "flow-typed": "~2.4.0",
     "eslint": "~4.18.2",
     "eslint-config-airbnb": "~16.1.0",
     "eslint-plugin-flowtype": "^2.46.1",
@@ -42,8 +43,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "yarn prebuild && react-scripts build",
     "eslint": "eslint ./src",
+    "flow": "flow",
+    "postinstall": "flow-typed install",
+    "prebuild": "yarn flow; yarn eslint",
     "inject-favicon-markups": "gulp inject-favicon-markups"
   }
 }

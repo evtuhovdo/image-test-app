@@ -1,3 +1,5 @@
+// @flow
+// TODO: Типизировать детальнее
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import { responsiveStoreEnhancer } from 'redux-responsive';
@@ -5,6 +7,8 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web and AsyncStorage for react-native
 
 import reducers from './reducers';
+
+import type { StoreType } from './flow-types';
 
 const initialState = {};
 const enhancers = [responsiveStoreEnhancer];
@@ -32,7 +36,7 @@ const middlewares = [thunk];
 
 const composedEnhancers = compose(applyMiddleware(...middlewares), ...enhancers);
 
-const store = createStore(persistedReducer, initialState, composedEnhancers);
+const store: StoreType = createStore(persistedReducer, initialState, composedEnhancers);
 const persistor = persistStore(store);
 
 export { store, persistor };

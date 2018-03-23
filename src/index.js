@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -13,6 +15,10 @@ import registerServiceWorker from './registerServiceWorker';
 import { store, persistor } from './module/redux/store';
 
 const target = document.getElementById('root');
+
+if (!target) {
+  throw new Error("couldn't find element with id root");
+}
 
 if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line global-require,import/no-extraneous-dependencies

@@ -1,3 +1,5 @@
+// @flow
+
 import { reducer as formReducer } from 'redux-form';
 import { createResponsiveStateReducer } from 'redux-responsive';
 

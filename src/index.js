@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 
 import 'normalize.css';
 
@@ -9,7 +10,7 @@ import './index.css';
 import App from './containers/App';
 import registerServiceWorker from './registerServiceWorker';
 
-import store from './module/redux/store';
+import { store, persistor } from './module/redux/store';
 
 const target = document.getElementById('root');
 
@@ -20,11 +21,11 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 ReactDOM.render(
-  (
+  <PersistGate loading={null} persistor={persistor}>
     <Provider store={store}>
       <App />
     </Provider>
-  ),
+  </PersistGate>,
   target,
 );
 

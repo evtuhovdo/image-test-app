@@ -1,5 +1,5 @@
 import uuid from 'uuid/v4';
-import store from './../../../../../module/redux/store';
+import { store } from './../../../../../module/redux/store';
 import { imagesActions } from './../../../../../module/redux/modules/images';
 
 function submit(values) {

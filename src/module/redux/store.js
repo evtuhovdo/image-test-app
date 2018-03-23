@@ -1,6 +1,8 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import { responsiveStoreEnhancer } from 'redux-responsive';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web and AsyncStorage for react-native
 
 import reducers from './reducers';
 
@@ -14,14 +16,23 @@ if (process.env.NODE_ENV === 'development') {
   }
 }
 
+const persistConfig = {
+  key: 'persistedStore',
+  storage,
+  whitelist: ['imagesStore'],
+};
+
 const rootReducer = combineReducers({
   ...reducers,
 });
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const middlewares = [thunk];
 
 const composedEnhancers = compose(applyMiddleware(...middlewares), ...enhancers);
 
-const store = createStore(rootReducer, initialState, composedEnhancers);
+const store = createStore(persistedReducer, initialState, composedEnhancers);
+const persistor = persistStore(store);
 
-export default store;
+export { store, persistor };
